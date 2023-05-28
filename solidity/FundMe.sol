@@ -9,7 +9,7 @@ contract FundMe {
 
     using PriceConverter for uint256;
 
-    uint256 public minimumUsd = 5 * 1e18;
+    uint256 public constant MINIMUM_USD = 5 * 1e18;
 
     address public owner;
 
@@ -22,7 +22,7 @@ contract FundMe {
         address[] public funders;
         mapping(address => uint256) public addressToAmountFunded;
         
-        require (msg.value.getConversionRate() >= minimumUsd, "Didn't send enough"); // 1e18 == 1 * 10 ** 18
+        require (msg.value.getConversionRate() >= MINIMUM_USD, "Didn't send enough"); // 1e18 == 1 * 10 ** 18
         // require keyword is a checker which reverts if false
         // reverting: undo any action before, and send remaining gas back 
         funders.push(msg.sender)
