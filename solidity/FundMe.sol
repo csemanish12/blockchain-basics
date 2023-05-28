@@ -7,7 +7,7 @@ import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 
 contract FundMe {
 
-    uint256 public minimumUsd = 50;
+    uint256 public minimumUsd = 50 * 1e18;
 
     function fund() public payable {
         // want to be able to set a minimum fund amount in USD
