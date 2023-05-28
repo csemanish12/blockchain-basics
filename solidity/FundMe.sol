@@ -26,7 +26,7 @@ contract FundMe {
         // require keyword is a checker which reverts if false
         // reverting: undo any action before, and send remaining gas back 
         funders.push(msg.sender)
-        addressToAmountFunded[msg.sender] = msg.value;
+        addressToAmountFunded[msg.sender] += msg.value;
     }
 
     function withdraw() public onlyOwner{
