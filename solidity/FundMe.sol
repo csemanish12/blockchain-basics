@@ -11,6 +11,12 @@ contract FundMe {
 
     uint256 public minimumUsd = 5 * 1e18;
 
+    address public owner;
+
+    constructor(){
+        owner = msg.sender;
+    }
+
     function fund() public payable {
         // want to be able to set a minimum fund amount in USD
         address[] public funders;
