@@ -37,7 +37,7 @@ contract FundMe {
         }
 
         funders = new address[](0);
-        // reset an array
+
 
         // // three different ways to send 
 
