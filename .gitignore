@@ -4,3 +4,5 @@ node_modules
 *.bin
 .env
 .encryptedKey.json
+.prettierrc
+yarn-error.log
