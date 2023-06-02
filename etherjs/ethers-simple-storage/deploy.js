@@ -21,10 +21,10 @@ async function main() {
   const contractFactory = new ethers.ContractFactory(abi, binary, wallet);
   console.log("deploying please wait");
   const contract = await contractFactory.deploy(); // stop here! Wait for contract to deploy
-  console.log("contract=",contract);
+  // console.log("contract=",contract);
   
-  const transactionReceipt = await contract.deploymentTransaction().wait(1);
-  console.log("transaction receipt:", transactionReceipt)
+  await contract.deploymentTransaction().wait(1);
+  // console.log("transaction receipt:", transactionReceipt)
 
 //   console.log("lets deploy with only transaction data")
 //   const nonce = await wallet.getNonce()
@@ -48,6 +48,15 @@ async function main() {
 //   const sentTransaction = await (await wallet.sendTransaction(tx)).wait(1);
 //   console.log("sent transaction:", sentTransaction)
 
+
+const favNumber = await contract.retrieve()
+console.log(`current fav number:${favNumber.toString()}`)
+
+const transactionResponse = await contract.store("7")
+transactionResponse.wait(1)
+
+const updatedFavNumber = await contract.retrieve()
+console.log(`update fav number:${updatedFavNumber.toString()}`)
 
 
 }
