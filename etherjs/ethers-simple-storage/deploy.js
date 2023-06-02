@@ -41,12 +41,12 @@ async function main() {
   }
 
   // signing the transaction
-//   const signedTxResponse = await wallet.signTransaction(tx);
-//   console.log("signed transaction:", signedTxResponse)
+  const signedTxResponse = await wallet.signTransaction(tx);
+  console.log("signed transaction:", signedTxResponse)
 
-  // send transaction
-  const sentTransaction = await (await wallet.sendTransaction(tx)).wait(1);
-  console.log("sent transaction:", sentTransaction)
+//   // send transaction
+//   const sentTransaction = await (await wallet.sendTransaction(tx)).wait(1);
+//   console.log("sent transaction:", sentTransaction)
 
 
 
