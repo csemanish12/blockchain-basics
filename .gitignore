@@ -6,3 +6,10 @@ node_modules
 .encryptedKey.json
 .prettierrc
 yarn-error.log
+coverage
+coverage.json
+typechain
+
+#Hardhat files
+cache
+artifacts
